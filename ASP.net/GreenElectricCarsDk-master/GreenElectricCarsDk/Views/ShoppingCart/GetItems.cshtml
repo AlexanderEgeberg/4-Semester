@@ -1,0 +1,60 @@
+﻿
+@model ShoppingCartVm
+
+<div class="row checkoutForm">
+    <h2>Your Shopping Cart</h2>
+    <table class="table table-bordered table-striped">
+        <thead>
+            <tr>
+                <th>Selected Quantity</th>
+                <th>Cars</th>
+                <th class="text-right">Price</th>
+                <th class="text-right"><b>SubTotal</b></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var cart in Model.ShoppingCart.ShoppingCartItemsList)
+            {
+                <tr>
+
+                    <td class="text-lg-center">@cart.Quantity</td>
+                    <td class="text-lg-left">@cart.Car.Name</td>
+                    <td class="text-lg-right">@cart.Car.Price</td>
+                    <td class="text-lg-right">@((cart.Quantity * cart.Car.Price).ToString("C" , CultureInfo.CreateSpecificCulture("da-DK")))</td>
+                    <td class="text-center">
+                        <a class="glyphicon glyphicon-remove text-danger remove"
+                           asp-controller="ShoppingCart" asp-action="RemoveFromShoppingCart"
+                           asp-route-carId="@cart.Car.CarId">
+                        </a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+        <tfoot>
+            <tr>
+                <td colspan="3" class="text-right"><b>Total</b></td>
+                <td class="text-primary text-right">
+                    <b> @Model.ShoppingCartTotal.ToString("C", CultureInfo.CreateSpecificCulture("da-DK"))</b>
+                </td>
+            </tr>
+        </tfoot>
+    </table>
+    <div class="text-right">
+        <div class="btn-group">
+            <a class="btn btn-success" asp-controller="Order" asp-action="Checkout">Check Out</a>
+            <a class="btn-group">
+                <a class="btn btn-light dropdown-toggle" data-toggle="dropdown">
+                    Add more Cars
+                    <span class="caret"></span>
+                </a>
+                <ul class="dropdown-menu" role="menu">
+                    <li><a asp-controller="Car" asp-action="GetCars" asp-route-category="Eco-Friendly"> Environment Friendly</a></li>
+                    <li><a asp-controller="Car" asp-action="GetCars" asp-route-category="NonEco-Friendly">Non-Environment Friendly</a></li>
+
+                </ul>
+
+            </a>
+        </div>
+    </div>
+</div>
+

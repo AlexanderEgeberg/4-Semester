@@ -1,0 +1,27 @@
+﻿@model Car
+
+
+@{ 
+    var img = "/Images/" + Model.ImageThumbnailUrl;
+}
+<div class="col-sm-4 col-lg-4 col-md-4">
+    <div class="thumbnail">
+        <img src="@img" class="card-img-top" alt="...">
+        <div class="figure-caption">
+            <h3 class="pull-right">@Model.Price.ToString("c")</h3>
+            <h3>
+                <a asp-controller="Car" asp-action="GetCars"
+                   asp-route-id="@Model.CarId">@Model.Name</a>
+            </h3>
+            <p>@Model.ShortDescribtion</p>
+        </div>
+        <div>
+            <p class="text-md-center">
+                <a class="btn btn-success" id="cartButton" asp-controller="ShoppingCart"
+                   asp-action="AddToShoppingCart" asp-route-carId="@Model.CarId">
+                    Add To Cart
+                </a>
+            </p>
+        </div>
+    </div>
+</div>

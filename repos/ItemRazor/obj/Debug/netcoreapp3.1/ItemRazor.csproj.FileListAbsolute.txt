@@ -1,0 +1,86 @@
+D:\VS2019\1 semester solutions\ItemRazor\bin\Debug\netcoreapp3.1\appsettings.Development.json
+D:\VS2019\1 semester solutions\ItemRazor\bin\Debug\netcoreapp3.1\appsettings.json
+D:\VS2019\1 semester solutions\ItemRazor\bin\Debug\netcoreapp3.1\ItemRazor.exe
+D:\VS2019\1 semester solutions\ItemRazor\bin\Debug\netcoreapp3.1\ItemRazor.deps.json
+D:\VS2019\1 semester solutions\ItemRazor\bin\Debug\netcoreapp3.1\ItemRazor.runtimeconfig.json
+D:\VS2019\1 semester solutions\ItemRazor\bin\Debug\netcoreapp3.1\ItemRazor.runtimeconfig.dev.json
+D:\VS2019\1 semester solutions\ItemRazor\bin\Debug\netcoreapp3.1\ItemRazor.dll
+D:\VS2019\1 semester solutions\ItemRazor\bin\Debug\netcoreapp3.1\ItemRazor.pdb
+D:\VS2019\1 semester solutions\ItemRazor\bin\Debug\netcoreapp3.1\ItemRazor.Views.dll
+D:\VS2019\1 semester solutions\ItemRazor\bin\Debug\netcoreapp3.1\ItemRazor.Views.pdb
+D:\VS2019\1 semester solutions\ItemRazor\obj\Debug\netcoreapp3.1\ItemRazor.AssemblyInfoInputs.cache
+D:\VS2019\1 semester solutions\ItemRazor\obj\Debug\netcoreapp3.1\ItemRazor.AssemblyInfo.cs
+D:\VS2019\1 semester solutions\ItemRazor\obj\Debug\netcoreapp3.1\ItemRazor.csproj.CoreCompileInputs.cache
+D:\VS2019\1 semester solutions\ItemRazor\obj\Debug\netcoreapp3.1\ItemRazor.MvcApplicationPartsAssemblyInfo.cache
+D:\VS2019\1 semester solutions\ItemRazor\obj\Debug\netcoreapp3.1\ItemRazor.RazorAssemblyInfo.cache
+D:\VS2019\1 semester solutions\ItemRazor\obj\Debug\netcoreapp3.1\ItemRazor.RazorAssemblyInfo.cs
+D:\VS2019\1 semester solutions\ItemRazor\obj\Debug\netcoreapp3.1\ItemRazor.TagHelpers.input.cache
+D:\VS2019\1 semester solutions\ItemRazor\obj\Debug\netcoreapp3.1\ItemRazor.TagHelpers.output.cache
+D:\VS2019\1 semester solutions\ItemRazor\obj\Debug\netcoreapp3.1\ItemRazor.RazorCoreGenerate.cache
+D:\VS2019\1 semester solutions\ItemRazor\obj\Debug\netcoreapp3.1\Razor\Pages\Error.cshtml.g.cs
+D:\VS2019\1 semester solutions\ItemRazor\obj\Debug\netcoreapp3.1\Razor\Pages\Index.cshtml.g.cs
+D:\VS2019\1 semester solutions\ItemRazor\obj\Debug\netcoreapp3.1\Razor\Pages\Item\CreateItem.cshtml.g.cs
+D:\VS2019\1 semester solutions\ItemRazor\obj\Debug\netcoreapp3.1\Razor\Pages\Item\GetAllItems.cshtml.g.cs
+D:\VS2019\1 semester solutions\ItemRazor\obj\Debug\netcoreapp3.1\Razor\Pages\Privacy.cshtml.g.cs
+D:\VS2019\1 semester solutions\ItemRazor\obj\Debug\netcoreapp3.1\Razor\Pages\Shared\_Layout.cshtml.g.cs
+D:\VS2019\1 semester solutions\ItemRazor\obj\Debug\netcoreapp3.1\Razor\Pages\Shared\_ValidationScriptsPartial.cshtml.g.cs
+D:\VS2019\1 semester solutions\ItemRazor\obj\Debug\netcoreapp3.1\Razor\Pages\_ViewImports.cshtml.g.cs
+D:\VS2019\1 semester solutions\ItemRazor\obj\Debug\netcoreapp3.1\Razor\Pages\_ViewStart.cshtml.g.cs
+D:\VS2019\1 semester solutions\ItemRazor\obj\Debug\netcoreapp3.1\ItemRazor.RazorTargetAssemblyInfo.cache
+D:\VS2019\1 semester solutions\ItemRazor\obj\Debug\netcoreapp3.1\ItemRazor.RazorTargetAssemblyInfo.cs
+D:\VS2019\1 semester solutions\ItemRazor\obj\Debug\netcoreapp3.1\ItemRazor.Views.pdb
+D:\VS2019\1 semester solutions\ItemRazor\obj\Debug\netcoreapp3.1\staticwebassets\ItemRazor.StaticWebAssets.Manifest.cache
+D:\VS2019\1 semester solutions\ItemRazor\obj\Debug\netcoreapp3.1\staticwebassets\ItemRazor.StaticWebAssets.xml
+D:\VS2019\1 semester solutions\ItemRazor\obj\Debug\netcoreapp3.1\ItemRazor.dll
+D:\VS2019\1 semester solutions\ItemRazor\obj\Debug\netcoreapp3.1\ItemRazor.pdb
+D:\VS2019\1 semester solutions\ItemRazor\obj\Debug\netcoreapp3.1\ItemRazor.genruntimeconfig.cache
+D:\VS2019\1 semester solutions\ItemRazor\obj\Debug\netcoreapp3.1\ItemRazor.csproj.CopyComplete
+D:\VS2019\1 semester solutions\ItemRazor\obj\Debug\netcoreapp3.1\scopedcss\bundle\ItemRazor.styles.css
+D:\VS2019\1 semester solutions\ItemRazor\obj\Debug\netcoreapp3.1\Razor\Pages\Item\DeleteItem.cshtml.g.cs
+D:\VS2019\1 semester solutions\ItemRazor\obj\Debug\netcoreapp3.1\Razor\Pages\Item\EditItem.cshtml.g.cs
+D:\VS2019\1 semester solutions\ItemRazor\obj\Debug\netcoreapp3.1\Razor\Pages\Item\GetAllItemsPagePagination.cshtml.g.cs
+D:\VS2019\1 semester solutions\ItemRazor\obj\Debug\netcoreapp3.1\Razor\Pages\Item\GelAllItemsAsCards.cshtml.g.cs
+D:\VS2019\1 semester solutions\ItemRazor\obj\Debug\netcoreapp3.1\ItemRazor.csprojAssemblyReference.cache
+C:\Users\alexa\source\repos\ItemRazor\obj\Debug\netcoreapp3.1\ItemRazor.csprojAssemblyReference.cache
+C:\Users\alexa\source\repos\ItemRazor\obj\Debug\netcoreapp3.1\ItemRazor.AssemblyInfoInputs.cache
+C:\Users\alexa\source\repos\ItemRazor\obj\Debug\netcoreapp3.1\ItemRazor.AssemblyInfo.cs
+C:\Users\alexa\source\repos\ItemRazor\obj\Debug\netcoreapp3.1\ItemRazor.csproj.CoreCompileInputs.cache
+C:\Users\alexa\source\repos\ItemRazor\obj\Debug\netcoreapp3.1\ItemRazor.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\alexa\source\repos\ItemRazor\obj\Debug\netcoreapp3.1\ItemRazor.RazorAssemblyInfo.cache
+C:\Users\alexa\source\repos\ItemRazor\obj\Debug\netcoreapp3.1\ItemRazor.RazorAssemblyInfo.cs
+C:\Users\alexa\source\repos\ItemRazor\obj\Debug\netcoreapp3.1\ItemRazor.dll
+C:\Users\alexa\source\repos\ItemRazor\obj\Debug\netcoreapp3.1\ItemRazor.pdb
+C:\Users\alexa\source\repos\ItemRazor\bin\Debug\netcoreapp3.1\appsettings.Development.json
+C:\Users\alexa\source\repos\ItemRazor\bin\Debug\netcoreapp3.1\appsettings.json
+C:\Users\alexa\source\repos\ItemRazor\bin\Debug\netcoreapp3.1\ItemRazor.exe
+C:\Users\alexa\source\repos\ItemRazor\bin\Debug\netcoreapp3.1\ItemRazor.deps.json
+C:\Users\alexa\source\repos\ItemRazor\bin\Debug\netcoreapp3.1\ItemRazor.runtimeconfig.json
+C:\Users\alexa\source\repos\ItemRazor\bin\Debug\netcoreapp3.1\ItemRazor.runtimeconfig.dev.json
+C:\Users\alexa\source\repos\ItemRazor\bin\Debug\netcoreapp3.1\ItemRazor.dll
+C:\Users\alexa\source\repos\ItemRazor\bin\Debug\netcoreapp3.1\ItemRazor.pdb
+C:\Users\alexa\source\repos\ItemRazor\bin\Debug\netcoreapp3.1\ItemRazor.Views.dll
+C:\Users\alexa\source\repos\ItemRazor\bin\Debug\netcoreapp3.1\ItemRazor.Views.pdb
+C:\Users\alexa\source\repos\ItemRazor\obj\Debug\netcoreapp3.1\staticwebassets\ItemRazor.StaticWebAssets.Manifest.cache
+C:\Users\alexa\source\repos\ItemRazor\obj\Debug\netcoreapp3.1\staticwebassets\ItemRazor.StaticWebAssets.xml
+C:\Users\alexa\source\repos\ItemRazor\obj\Debug\netcoreapp3.1\scopedcss\bundle\ItemRazor.styles.css
+C:\Users\alexa\source\repos\ItemRazor\obj\Debug\netcoreapp3.1\ItemRazor.TagHelpers.input.cache
+C:\Users\alexa\source\repos\ItemRazor\obj\Debug\netcoreapp3.1\ItemRazor.TagHelpers.output.cache
+C:\Users\alexa\source\repos\ItemRazor\obj\Debug\netcoreapp3.1\ItemRazor.RazorCoreGenerate.cache
+C:\Users\alexa\source\repos\ItemRazor\obj\Debug\netcoreapp3.1\Razor\Pages\Error.cshtml.g.cs
+C:\Users\alexa\source\repos\ItemRazor\obj\Debug\netcoreapp3.1\Razor\Pages\Index.cshtml.g.cs
+C:\Users\alexa\source\repos\ItemRazor\obj\Debug\netcoreapp3.1\Razor\Pages\Item\CreateItem.cshtml.g.cs
+C:\Users\alexa\source\repos\ItemRazor\obj\Debug\netcoreapp3.1\Razor\Pages\Item\DeleteItem.cshtml.g.cs
+C:\Users\alexa\source\repos\ItemRazor\obj\Debug\netcoreapp3.1\Razor\Pages\Item\EditItem.cshtml.g.cs
+C:\Users\alexa\source\repos\ItemRazor\obj\Debug\netcoreapp3.1\Razor\Pages\Item\GelAllItemsAsCards.cshtml.g.cs
+C:\Users\alexa\source\repos\ItemRazor\obj\Debug\netcoreapp3.1\Razor\Pages\Item\GetAllItems.cshtml.g.cs
+C:\Users\alexa\source\repos\ItemRazor\obj\Debug\netcoreapp3.1\Razor\Pages\Item\GetAllItemsPagePagination.cshtml.g.cs
+C:\Users\alexa\source\repos\ItemRazor\obj\Debug\netcoreapp3.1\Razor\Pages\Privacy.cshtml.g.cs
+C:\Users\alexa\source\repos\ItemRazor\obj\Debug\netcoreapp3.1\Razor\Pages\Shared\_Layout.cshtml.g.cs
+C:\Users\alexa\source\repos\ItemRazor\obj\Debug\netcoreapp3.1\Razor\Pages\Shared\_ValidationScriptsPartial.cshtml.g.cs
+C:\Users\alexa\source\repos\ItemRazor\obj\Debug\netcoreapp3.1\Razor\Pages\_ViewImports.cshtml.g.cs
+C:\Users\alexa\source\repos\ItemRazor\obj\Debug\netcoreapp3.1\Razor\Pages\_ViewStart.cshtml.g.cs
+C:\Users\alexa\source\repos\ItemRazor\obj\Debug\netcoreapp3.1\ItemRazor.RazorTargetAssemblyInfo.cache
+C:\Users\alexa\source\repos\ItemRazor\obj\Debug\netcoreapp3.1\ItemRazor.RazorTargetAssemblyInfo.cs
+C:\Users\alexa\source\repos\ItemRazor\obj\Debug\netcoreapp3.1\ItemRazor.Views.pdb
+C:\Users\alexa\source\repos\ItemRazor\obj\Debug\netcoreapp3.1\ItemRazor.genruntimeconfig.cache
+C:\Users\alexa\source\repos\ItemRazor\obj\Debug\netcoreapp3.1\ItemRazor.csproj.CopyComplete

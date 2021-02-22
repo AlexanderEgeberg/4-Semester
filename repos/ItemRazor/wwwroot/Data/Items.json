@@ -1,0 +1,27 @@
+[
+  {
+    "Id": 1,
+    "Name": "Computer",
+    "Price": 9999
+  },
+  {
+    "Id": 3,
+    "Name": "Monitor",
+    "Price": 2999
+  },
+  {
+    "Id": 6,
+    "Name": "Mouse",
+    "Price": 299
+  },
+  {
+    "Id": 4,
+    "Name": "Terminal bord, h\u00E6ve s\u00E6nke",
+    "Price": 14000
+  },
+  {
+    "Id": 1,
+    "Name": "test",
+    "Price": 56
+  }
+]

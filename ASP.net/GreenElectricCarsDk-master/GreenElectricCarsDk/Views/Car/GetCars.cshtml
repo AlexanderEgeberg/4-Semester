@@ -1,0 +1,23 @@
+﻿
+
+@model CarVm
+
+<div>
+    <h2>All Cars are shown Here</h2>
+</div>
+<h2>@Model.CurrentCategory </h2>
+<div class="row">
+    @{
+        try
+        {
+            foreach (var car in Model.Cars)
+            {
+                @await Html.PartialAsync("CarSummary", car);
+            }
+        }
+        catch (Exception ex)    
+        {
+            <span class="text-danger">@ex.Message</span>
+        }
+    }
+</div>
