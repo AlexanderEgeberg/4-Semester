@@ -39,7 +39,7 @@
     {
         public bool CheckKey(char c)
         {
-            if (c == 'd')
+            if (c == 's')
             {
                 return true;
             }
@@ -73,7 +73,7 @@
     {
         public bool CheckKey(char c)
         {
-            if (c == 'E')
+            if (c == 'e')
             {
                 return true;
             }

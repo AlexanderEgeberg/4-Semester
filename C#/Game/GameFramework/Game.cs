@@ -28,12 +28,8 @@ namespace GameFramework
         //game constructor with World size
         public Game(World world, List<ICreature> creatures, IPlayer player, List<IWorldObject> objects, IControls controls, IObserver deathObserver, List<IKey> keys)
         {
-
-            // Why does setting _player = new archmage of type IPlayer not work
-            //IPlayer test = new Archmage(new Position(0, 5), "Alex", "X", 5, 0, 5, player);
-            //_player = test;
-
-            //But if I set _player = player which is the exact same but gotten from constructor instead????
+          //  IPlayer test = new Archmage(new Position(0, 5), "Alex", "X", 5, 0, 5, player);
+           // _player = test;
             _player = player;
             _game_world = world;
             _creatures = creatures;
@@ -78,6 +74,7 @@ namespace GameFramework
                 //Event based on user move, if the player movement stops the game it will set to false.
                 Console.Write(gameGraphics);
                 _gameRunning = GameAction(_controls.ReadNextEvent(_keys), gameGraphics);
+                //Console.WriteLine($"{_player.Position.Col} && {_player.Position.Row}");
                 Console.WriteLine(_player);
                 if (!_player.IsAlive())
                 {
@@ -133,18 +130,16 @@ namespace GameFramework
             {
                 if (move == InputKey.USE)
                 {
+                    //not fan of using if statement to check if obj is weapon to use AscendPlayer
+                    if (obj is IWeapons weapon)
+                    {
+                        _player = weapon.AscendPlayer(_player);
+                        _game_world.Player = _player;
+                    }
                     obj.Use(_player, _objects, GetRandomPosition);
                 }
 
             }
-
-
-            //Supposedly if the player steps on a world object of the type book, they will be decorated as an Archmage, but doesn't work for some reason.
-            //if (obj != null && obj is Book && obj.Position.Equals(_player.Position))
-            //{
-            //    //_player = new Archmage(new Position(0, 5), "Alex", "X", 5, 0, 5, _player);
-            //}
-
             if (_player.HasKey)
             {
                 //TODO decorate player with key make it so you win the game if the player holds the key while on another object

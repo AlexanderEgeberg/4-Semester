@@ -1,1 +1,2 @@
 Name Start: 1 : Game initial drawing
+Name Information: 2 : Zombie Infected was killed

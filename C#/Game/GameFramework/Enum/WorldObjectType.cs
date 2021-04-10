@@ -5,6 +5,8 @@
         Food,
         Wall,
         Key,
-        Book
+        Wand,
+        Bow,
+        Sword
     }
 }

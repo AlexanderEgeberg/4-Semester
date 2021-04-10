@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Runtime.CompilerServices;
 using GameFramework.Factory.Entities.Creatures;
 
 namespace GameFramework.Decorator
@@ -6,19 +7,19 @@ namespace GameFramework.Decorator
     public abstract class PlayerDecorator : Creature, IPlayer
     {
         private IPlayer Player;
-        protected PlayerDecorator(Position position, string name, string symbol, int attackDamage, int defense, int hp, IPlayer aPlayer)
+
+        protected PlayerDecorator(Position position, string name, string symbol, int attackDamage, int defense, int hp,
+            IPlayer aPlayer)
             : base(position, name, symbol, attackDamage, defense, hp)
         {
             this.Player = aPlayer;
         }
 
-        public bool HasKey { get => Player.HasKey; set => Player.HasKey = value; }
-
-        public virtual int Hit(ICreature enemy)
+        public bool HasKey
         {
-            return this.Player.Hit(enemy);
+            get => Player.HasKey;
+            set => Player.HasKey = value;
         }
-
 
         public void Eat(int food)
         {
@@ -36,7 +37,7 @@ namespace GameFramework.Decorator
 
                 if (enemy.IsAlive())
                 {
-                    this.ReceiveHit(enemy.Hit(enemy));
+                    this.ReceiveHit(this.Hit(enemy));
                 }
             } while (this.IsAlive() && enemy.IsAlive());
 
@@ -52,30 +53,15 @@ namespace GameFramework.Decorator
 
             return true;
         }
-        //this work but why does Player.Move() work???
-        public void Move(InputKey move)
+
+        public virtual int Hit(ICreature enemy)
         {
-            switch (move)
-            {
-                case InputKey.FORWARD:
-                    Position.Row--;
-                    break;
-                case InputKey.BACK:
-                    Position.Row++;
-                    break;
-                case InputKey.RIGHT:
-                    Position.Col++;
-                    break;
-                case InputKey.LEFT:
-                    Position.Col--;
-                    break;
-            }
+            return this.Player.Hit(enemy);
         }
 
-        //Why doesn't this work???????
-        //public void Move(InputKey move)
-        //{
-        //    Player.Move(move);
-        //}
+        public void Move(InputKey move)
+        {
+            Player.Move(move);
+        }
     }
 }

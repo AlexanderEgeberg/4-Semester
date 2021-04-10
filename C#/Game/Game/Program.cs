@@ -34,7 +34,6 @@ namespace GameFramework
 
             List<IWorldObject> objects = new List<IWorldObject>()
             {
-                WorldObjectFactory.GetWorldObject(WorldObjectType.Food, new Position(0, 5), true, "Sandwich", false, 15, false, "S")
                //WorldObjectFactory.GetWorldObject(WorldObjectType.Food,rnd.Next(0, configDataInt[0]), rnd.Next(0, configDataInt[1]), true, "Apple", true,10,false,"A"),
                 //WorldObjectFactory.GetWorldObject(WorldObjectType.Food,rnd.Next(0, configDataInt[0]), rnd.Next(0, configDataInt[1]), true, "Sandwich",false, 15,false, "S"),
             };
@@ -51,8 +50,17 @@ namespace GameFramework
             List<IKey> keys = new List<IKey>()
             {
                 new LeftKey(),
-                new RightKey()
+                new RightKey(),
+                new ForwardKey(),
+                new BackKey(),
+                new UseKey()
             };
+
+            //test controls
+            //while(true)
+            //{
+            //    Console.WriteLine(controls.ReadNextEvent(keys));
+            //}
 
             //could add to config
             string[,] grid =
@@ -61,13 +69,13 @@ namespace GameFramework
                 {"*","*","*","*","#","*","#","*","*","*","*"},
                 {"#","#","#","#","#","*","#","*","*","*","*"},
                 {"K","*","Z","*","*","*","#","*","*","*","*"},
+                {"#","#","#","#","#","*","#","#","#","#","#"},
+                {"*","*","*","*","#","*","#","*","*","*","S"},
+                {"*","*","*","*","#","*","*","*","*","*","B"},
+                {"*","*","*","*","#","*","#","*","*","*","W"},
+                {"#","#","#","#","#","*","#","#","#","#","#"},
+                {"A","*","*","*","F","*","#","*","*","*","*"},
                 {"#","#","#","#","#","*","#","*","*","*","*"},
-                {"*","*","*","*","#","*","#","*","*","*","*"},
-                {"*","*","*","*","#","*","#","*","*","*","*"},
-                {"*","*","*","*","#","*","#","*","*","*","*"},
-                {"#","#","#","#","#","*","#","*","*","*","*"},
-                {"S","*","*","*","F","*","#","*","*","*","*"},
-                {"#","#","#","#","#","B","#","*","*","*","*"},
 
             };
 
@@ -92,7 +100,7 @@ namespace GameFramework
                             //    creatures.Add(CreatureFactory.GetCreature(CreatureType.Player, new Position(y, x), 1, "Alex", "P"));
                             //    break;
                             case "Z":
-                                creatures.Add(CreatureFactory.GetCreature(CreatureType.Zombie, new Position(y, x), 10, "Zombie", "Z",5,0));
+                                creatures.Add(CreatureFactory.GetCreature(CreatureType.Zombie, new Position(y, x), 10, "Zombie", element, 5,0));
                                 break;
                             case "#":
 
@@ -100,19 +108,24 @@ namespace GameFramework
                                 break;
                             case "F":
 
-                                objects.Add(WorldObjectFactory.GetWorldObject(WorldObjectType.Wall, new Position(y, x), false, "Wall", true, 0, false, "#"));
+                                objects.Add(WorldObjectFactory.GetWorldObject(WorldObjectType.Wall, new Position(y, x), false, "Wall", true, 0, false, element));
                                 break;
-                            case "S":
+                            case "A":
 
-                                objects.Add(WorldObjectFactory.GetWorldObject(WorldObjectType.Food, new Position(y, x), true, "Sandwich", false, 15, false, "S"));
+                                objects.Add(WorldObjectFactory.GetWorldObject(WorldObjectType.Food, new Position(y, x), true, "Apple", false, 15, false, element));
+                                break;
+                            case "W":
+                                objects.Add(WorldObjectFactory.GetWorldObject(WorldObjectType.Wand, new Position(y, x), true, "Wand", false, 5, false, element));
                                 break;
                             case "B":
-
-                                objects.Add(WorldObjectFactory.GetWorldObject(WorldObjectType.Book, new Position(y, x), true, "Poisoned apple", false, 5, false, element));
+                                objects.Add(WorldObjectFactory.GetWorldObject(WorldObjectType.Bow, new Position(y, x), true, "Bow", false, 5, false, element));
+                                break;
+                            case "S":
+                                objects.Add(WorldObjectFactory.GetWorldObject(WorldObjectType.Sword, new Position(y, x), true, "Sword", false, 5, false, element));
                                 break;
                             case "K":
 
-                                objects.Add(WorldObjectFactory.GetWorldObject(WorldObjectType.Key, new Position(y, x), true, "Key", false, 0, false, "K"));
+                                objects.Add(WorldObjectFactory.GetWorldObject(WorldObjectType.Key, new Position(y, x), true, "Key", false, 0, false, element));
                                 break;
                             default:
                                 //Console.WriteLine($"{t2[0]}{t2[1]}");
@@ -124,18 +137,18 @@ namespace GameFramework
             }
 
             //start the game
-            //StartGame();
+            StartGame();
 
            void StartGame()
            {
                CreateWorld();
-               IPlayer player = new Mage(new Position(0, 5),"Alex", "H",5,1,10);
+               IPlayer player = new Ranger(new Position(0, 5),"Alex", "H",5,1,10);
 
-               //Why does decorating player as archmage here work fine, but if I do it inside the game it doesn't work?
-               player = new Archmage(new Position(0, 5), "Alex", "X", 5, 0, 5, player);
+
+               //player = new Archmage(new Position(0, 5), "Alex", "X", 5, 0, 5, player);
 
                 //create a game with World dimensions, creatures, and items
-                World world = new World(configDataInt[0], configDataInt[1], creatures, player, objects);
+               World world = new World(configDataInt[0], configDataInt[1], creatures, player, objects);
 
                Game puzzle = new Game(world, creatures, player, objects, controls,deathObserver,keys);
                puzzle.Start();

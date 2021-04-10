@@ -15,8 +15,7 @@ namespace GameFramework
         public int MaxWidth { get; set; }
         public int MaxHeight { get; set; }
         private readonly string _horizontalLine = "";
-
-        private IPlayer _player;
+        public IPlayer Player { get; set; }
         private List<ICreature> _creatures;
         private List<IWorldObject> _objects;
 
@@ -26,7 +25,7 @@ namespace GameFramework
             MaxWidth = width;
             MaxHeight = height;
             _creatures = creatures;
-            _player = player;
+            Player = player;
             _objects = objects;
 
             //creates HL with length of World width
@@ -82,10 +81,10 @@ namespace GameFramework
             var objects = _objects.Find(x => x.Position.Equals(p));
 
 
-            //TODO find a way to draw objects that 
-            if (_player.Position.Equals(p))
+            //TODO find a way to draw objects that doen't use if statements - look at controls do same thing
+            if (Player.Position.Equals(p))
             {
-                sb.Append(_player.Symbol);
+                sb.Append(Player.Symbol);
             }
             else if (objects != null)
             {

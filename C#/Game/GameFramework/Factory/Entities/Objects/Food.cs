@@ -13,6 +13,7 @@ namespace GameFramework
         {
             Value = value;
         }
+
         public override void Use(IPlayer creature, List<IWorldObject> objList, Action<IWorldObject> testAction)
         {
 
