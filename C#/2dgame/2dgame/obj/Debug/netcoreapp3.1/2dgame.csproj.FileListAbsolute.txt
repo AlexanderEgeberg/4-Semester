@@ -1,0 +1,16 @@
+C:\Users\alexa\Documents\GitHub\4 Semester\C#\2dgame\2dgame\obj\Debug\netcoreapp3.1\2dgame.csprojAssemblyReference.cache
+C:\Users\alexa\Documents\GitHub\4 Semester\C#\2dgame\2dgame\obj\Debug\netcoreapp3.1\2dgame.AssemblyInfoInputs.cache
+C:\Users\alexa\Documents\GitHub\4 Semester\C#\2dgame\2dgame\obj\Debug\netcoreapp3.1\2dgame.AssemblyInfo.cs
+C:\Users\alexa\Documents\GitHub\4 Semester\C#\2dgame\2dgame\obj\Debug\netcoreapp3.1\2dgame.csproj.CoreCompileInputs.cache
+C:\Users\alexa\Documents\GitHub\4 Semester\C#\2dgame\2dgame\bin\Debug\netcoreapp3.1\2dgame.exe
+C:\Users\alexa\Documents\GitHub\4 Semester\C#\2dgame\2dgame\bin\Debug\netcoreapp3.1\2dgame.deps.json
+C:\Users\alexa\Documents\GitHub\4 Semester\C#\2dgame\2dgame\bin\Debug\netcoreapp3.1\2dgame.runtimeconfig.json
+C:\Users\alexa\Documents\GitHub\4 Semester\C#\2dgame\2dgame\bin\Debug\netcoreapp3.1\2dgame.runtimeconfig.dev.json
+C:\Users\alexa\Documents\GitHub\4 Semester\C#\2dgame\2dgame\bin\Debug\netcoreapp3.1\2dgame.dll
+C:\Users\alexa\Documents\GitHub\4 Semester\C#\2dgame\2dgame\bin\Debug\netcoreapp3.1\2dgame.pdb
+C:\Users\alexa\Documents\GitHub\4 Semester\C#\2dgame\2dgame\bin\Debug\netcoreapp3.1\GameFramework.dll
+C:\Users\alexa\Documents\GitHub\4 Semester\C#\2dgame\2dgame\bin\Debug\netcoreapp3.1\GameFramework.pdb
+C:\Users\alexa\Documents\GitHub\4 Semester\C#\2dgame\2dgame\obj\Debug\netcoreapp3.1\2dgame.csproj.CopyComplete
+C:\Users\alexa\Documents\GitHub\4 Semester\C#\2dgame\2dgame\obj\Debug\netcoreapp3.1\2dgame.dll
+C:\Users\alexa\Documents\GitHub\4 Semester\C#\2dgame\2dgame\obj\Debug\netcoreapp3.1\2dgame.pdb
+C:\Users\alexa\Documents\GitHub\4 Semester\C#\2dgame\2dgame\obj\Debug\netcoreapp3.1\2dgame.genruntimeconfig.cache

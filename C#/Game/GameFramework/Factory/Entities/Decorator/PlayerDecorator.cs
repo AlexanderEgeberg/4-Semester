@@ -1,0 +1,81 @@
+﻿using System;
+using GameFramework.Factory.Entities.Creatures;
+
+namespace GameFramework.Decorator
+{
+    public abstract class PlayerDecorator : Creature, IPlayer
+    {
+        private IPlayer Player;
+        protected PlayerDecorator(Position position, string name, string symbol, int attackDamage, int defense, int hp, IPlayer aPlayer)
+            : base(position, name, symbol, attackDamage, defense, hp)
+        {
+            this.Player = aPlayer;
+        }
+
+        public bool HasKey { get => Player.HasKey; set => Player.HasKey = value; }
+
+        public virtual int Hit(ICreature enemy)
+        {
+            return this.Player.Hit(enemy);
+        }
+
+
+        public void Eat(int food)
+        {
+            this.HP += food;
+        }
+
+        public bool Fight(ICreature enemy)
+        {
+            do
+            {
+                if (this.IsAlive())
+                {
+                    enemy.ReceiveHit(this.Hit(enemy));
+                }
+
+                if (enemy.IsAlive())
+                {
+                    this.ReceiveHit(enemy.Hit(enemy));
+                }
+            } while (this.IsAlive() && enemy.IsAlive());
+
+            if (this.IsAlive())
+            {
+                return true;
+            }
+            if (enemy.IsAlive())
+            {
+                Console.WriteLine("You died");
+                return false;
+            }
+
+            return true;
+        }
+        //this work but why does Player.Move() work???
+        public void Move(InputKey move)
+        {
+            switch (move)
+            {
+                case InputKey.FORWARD:
+                    Position.Row--;
+                    break;
+                case InputKey.BACK:
+                    Position.Row++;
+                    break;
+                case InputKey.RIGHT:
+                    Position.Col++;
+                    break;
+                case InputKey.LEFT:
+                    Position.Col--;
+                    break;
+            }
+        }
+
+        //Why doesn't this work???????
+        //public void Move(InputKey move)
+        //{
+        //    Player.Move(move);
+        //}
+    }
+}

@@ -1,0 +1,9 @@
+C:\Users\alexa\Documents\GitHub\4 Semester\C#\2dgame\GameFramework\bin\Debug\netstandard2.0\GameFramework.deps.json
+C:\Users\alexa\Documents\GitHub\4 Semester\C#\2dgame\GameFramework\bin\Debug\netstandard2.0\GameFramework.dll
+C:\Users\alexa\Documents\GitHub\4 Semester\C#\2dgame\GameFramework\bin\Debug\netstandard2.0\GameFramework.pdb
+C:\Users\alexa\Documents\GitHub\4 Semester\C#\2dgame\GameFramework\obj\Debug\netstandard2.0\GameFramework.csprojAssemblyReference.cache
+C:\Users\alexa\Documents\GitHub\4 Semester\C#\2dgame\GameFramework\obj\Debug\netstandard2.0\GameFramework.AssemblyInfoInputs.cache
+C:\Users\alexa\Documents\GitHub\4 Semester\C#\2dgame\GameFramework\obj\Debug\netstandard2.0\GameFramework.AssemblyInfo.cs
+C:\Users\alexa\Documents\GitHub\4 Semester\C#\2dgame\GameFramework\obj\Debug\netstandard2.0\GameFramework.csproj.CoreCompileInputs.cache
+C:\Users\alexa\Documents\GitHub\4 Semester\C#\2dgame\GameFramework\obj\Debug\netstandard2.0\GameFramework.dll
+C:\Users\alexa\Documents\GitHub\4 Semester\C#\2dgame\GameFramework\obj\Debug\netstandard2.0\GameFramework.pdb

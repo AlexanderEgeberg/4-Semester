@@ -1,0 +1,9 @@
+C:\Users\alexa\Documents\GitHub\4 Semester\C#\2dgame\Library\bin\Debug\netcoreapp3.1\Library.deps.json
+C:\Users\alexa\Documents\GitHub\4 Semester\C#\2dgame\Library\bin\Debug\netcoreapp3.1\Library.dll
+C:\Users\alexa\Documents\GitHub\4 Semester\C#\2dgame\Library\bin\Debug\netcoreapp3.1\Library.pdb
+C:\Users\alexa\Documents\GitHub\4 Semester\C#\2dgame\Library\obj\Debug\netcoreapp3.1\Library.csprojAssemblyReference.cache
+C:\Users\alexa\Documents\GitHub\4 Semester\C#\2dgame\Library\obj\Debug\netcoreapp3.1\Library.AssemblyInfoInputs.cache
+C:\Users\alexa\Documents\GitHub\4 Semester\C#\2dgame\Library\obj\Debug\netcoreapp3.1\Library.AssemblyInfo.cs
+C:\Users\alexa\Documents\GitHub\4 Semester\C#\2dgame\Library\obj\Debug\netcoreapp3.1\Library.csproj.CoreCompileInputs.cache
+C:\Users\alexa\Documents\GitHub\4 Semester\C#\2dgame\Library\obj\Debug\netcoreapp3.1\Library.dll
+C:\Users\alexa\Documents\GitHub\4 Semester\C#\2dgame\Library\obj\Debug\netcoreapp3.1\Library.pdb
