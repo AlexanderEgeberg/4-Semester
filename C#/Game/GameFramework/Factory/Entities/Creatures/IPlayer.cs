@@ -8,6 +8,5 @@ namespace GameFramework.Factory.Entities.Creatures
         public bool HasKey { get; set; }
         void Move(InputKey move);
         void Eat(int food);
-        bool Fight(ICreature enemy);
     }
 }

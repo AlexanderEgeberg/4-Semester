@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace GameFramework.Entities
+﻿namespace GameFramework.Factory.Entities.Creatures
 {
     public class Zombie : Monster
     {

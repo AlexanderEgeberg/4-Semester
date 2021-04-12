@@ -1,11 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Text;
-using GameFramework.Factory.Entities.Creatures;
-using GameFramework.Factory.Entities.Objects;
+﻿using System.Diagnostics;
 
-namespace GameFramework
+namespace GameFramework.Factory.Entities.Creatures
 {
     public abstract class Player : Creature, IPlayer
     {
@@ -31,39 +26,14 @@ namespace GameFramework
                     Position.Col--;
                     break;
             }
+            //Undo comment if you want to trace movement, added to much spam in my opinion
+            //TraceWorker.Write(TraceEventType.Information, 11, $"{this.GetType().Name} {this.Name} moved {move}");
         }
 
         public void Eat(int food)
         {
+            TraceWorker.Write(TraceEventType.Information, 10, $"{this.GetType().Name} {this.Name} was killed");
             this.HP += food;
-        }
-
-        public bool Fight(ICreature enemy)
-        {
-            do
-            {
-                if (this.IsAlive())
-                {
-                    enemy.ReceiveHit(this.Hit(enemy));
-                }
-
-                if (enemy.IsAlive())
-                {
-                    this.ReceiveHit(this.Hit(enemy));
-                }
-            } while (this.IsAlive() && enemy.IsAlive());
-
-            if (this.IsAlive())
-            {
-                return true;
-            }
-            if (enemy.IsAlive())
-            {
-                Console.WriteLine("You died");
-                return false;
-            }
-
-            return true;
         }
     }
 }

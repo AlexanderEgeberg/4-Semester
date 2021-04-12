@@ -1,12 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Text;
-using System.Threading;
-using GameFramework;
-using GameFramework.Factory.Entities.Creatures;
+﻿using System.Collections.Generic;
+using System.Diagnostics;
+using GameFramework.Enum;
 
-namespace GameFramework
+namespace GameFramework.Factory.Entities.Creatures
 {
     public abstract class Creature : CreatureObserver, ICreature
     {
@@ -40,17 +36,19 @@ namespace GameFramework
         public int Hit(ICreature enemy)
         {
             //add damage calculation here
+
             var damage = AttackDamage;
+
+            TraceWorker.Write(TraceEventType.Information, 13, $"{this.GetType().Name} {this.Name} hit {enemy.GetType().Name} {enemy.Name} for {damage}");
+
             return damage;
         }
 
         public void ReceiveHit(int damage)
         {
-
             //Add resistance here
             this.HP -= damage - this.Defense;
             this.IsAlive();
-
         }
 
         public bool IsAlive()

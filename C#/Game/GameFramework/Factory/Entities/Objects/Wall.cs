@@ -11,7 +11,7 @@ namespace GameFramework.Factory.Entities.Objects
         {
         }
 
-        public override void Use(IPlayer creature, List<IWorldObject> objList, Action<IWorldObject> testAction)
+        public override void Use(ref IPlayer creature, List<IWorldObject> objList, Action<IWorldObject> testAction)
         {
             //Console.WriteLine("Secret wall");
 

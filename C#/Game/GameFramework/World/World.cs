@@ -4,7 +4,6 @@ using System.Linq;
 using System.Runtime.CompilerServices;
 using System.Text;
 using System.Xml.Serialization;
-using GameFramework.Entities;
 using GameFramework.Enum;
 using GameFramework.Factory.Entities.Creatures;
 
@@ -14,13 +13,13 @@ namespace GameFramework
     {
         public int MaxWidth { get; set; }
         public int MaxHeight { get; set; }
-        private readonly string _horizontalLine = "";
         public IPlayer Player { get; set; }
-        private List<ICreature> _creatures;
+        private List<IMonster> _creatures;
         private List<IWorldObject> _objects;
+        private string _horizontalLine;
 
         //constructor creates World
-        public World(int width, int height, List<ICreature> creatures, IPlayer player, List<IWorldObject> objects)
+        public World(int width, int height, List<IMonster> creatures, IPlayer player, List<IWorldObject> objects)
         {
             MaxWidth = width;
             MaxHeight = height;
@@ -81,7 +80,7 @@ namespace GameFramework
             var objects = _objects.Find(x => x.Position.Equals(p));
 
 
-            //TODO find a way to draw objects that doen't use if statements - look at controls do same thing
+            //TODO find a way to draw objects that doen't use if statements make it extendable - look at controls do same thing
             if (Player.Position.Equals(p))
             {
                 sb.Append(Player.Symbol);

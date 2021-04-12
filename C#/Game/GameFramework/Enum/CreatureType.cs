@@ -6,7 +6,7 @@ namespace GameFramework.Enum
 {
     public enum CreatureType
     {
-        Mage,
-        Zombie
+        Zombie,
+        Dragon
     };
 }

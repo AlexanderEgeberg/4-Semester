@@ -4,6 +4,6 @@ namespace GameFramework
 {
     public interface IControls
     {
-        public InputKey ReadNextEvent(List<IKey> keys);
+        public InputKey ReadNextEvent();
     }
 }

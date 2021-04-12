@@ -1,8 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "QIgDzQUqEt9sGh40OIWZ/PhAafHcg+Hi7G6BToAbgFofnFwNDdcqbBRfqGm1Jf/z93v0M1H9QJUcmTauE0W1bQ==",
+  "dgSpecHash": "KWLpW1ScMEs9FxbremBbqR7f/r4O3QAGG4GAAiL9x1RuDdRTbNNmtiPG+SLcroVCUbVXytpoJ3WPtZCSok1TbA==",
   "success": true,
   "projectFilePath": "C:\\Users\\alexa\\Documents\\GitHub\\4 Semester\\C#\\Game\\Game\\Game.csproj",
-  "expectedPackageFiles": [],
+  "expectedPackageFiles": [
+    "C:\\Users\\alexa\\.nuget\\packages\\newtonsoft.json\\13.0.1\\newtonsoft.json.13.0.1.nupkg.sha512"
+  ],
   "logs": []
 }

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using GameFramework;
-using GameFramework.Entities;
+using GameFramework.Config;
 using GameFramework.Enum;
 using GameFramework.Factory.Entities.Creatures;
 
@@ -11,31 +11,40 @@ namespace GameFramework.Factory
 {
     public static class CreatureFactory
     {
-        public static ICreature GetCreature(CreatureType type, Position position, int hp, string name, string symbol,int attackDamage, int defense)
+        static List<string> names = CreatureConfig.LoadJson();
+
+        public static IMonster GetCreature(CreatureType type, Position position, int hp, string name, string symbol,int attackDamage, int defense)
         {
             //TODO implement creature level,attack, and defense
             //TODO attack and defense based on level
 
             switch (type)
             {
-                case CreatureType.Zombie: return new Zombie(position, GetRandomName(),symbol,attackDamage,defense,hp);
-                case CreatureType.Mage: return new Mage(position, name, symbol, attackDamage, defense,hp);
+                case CreatureType.Zombie: return new Zombie(position, GetRandomName(names),symbol,attackDamage,defense,hp);
+                case CreatureType.Dragon: return new Dragon(position, name, symbol, attackDamage, defense, hp);
+
+            }
+
+            return null;
+        }
+        public static IMonster GetCreature(CreatureType type, Position position, int hp, string symbol, int attackDamage, int defense)
+        {
+            //TODO implement creature level,attack, and defense
+            //TODO attack and defense based on level
+
+            switch (type)
+            {
+                case CreatureType.Zombie: return new Zombie(position, GetRandomName(names), symbol, attackDamage, defense, hp);
+                case CreatureType.Dragon: return new Dragon(position, GetRandomName(names), symbol, attackDamage, defense, hp);
+
             }
 
             return null;
         }
 
-        static string GetRandomName()
+        static string GetRandomName(List<string> names)
         {
-            List<string> Names = new List<string>()
-            {
-                "Walker",
-                "Lurker",
-                "Biter",
-                "Roamer",
-                "Infected",
-            };
-            return Names.OrderBy(s => Guid.NewGuid()).First(); ;
+            return names.OrderBy(s => Guid.NewGuid()).First(); ;
         }
     }
 }

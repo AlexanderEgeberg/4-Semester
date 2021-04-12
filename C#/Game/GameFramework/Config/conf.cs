@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Globalization;
+using System.Linq;
 using System.Text;
 using System.Xml;
 
@@ -10,11 +12,13 @@ namespace GameFramework
         public static List<int> ReadConfiguration()
         {
             List<int> test = new List<int>();
+
             test.Add(20);
             test.Add(20);
 
             XmlDocument configDoc = new XmlDocument();
-            configDoc.Load(@"C:\Users\alexa\Documents\GitHub\4 Semester\C#\Game\config.conf");
+            //TODO better path?
+            configDoc.Load(@"..\..\..\..\config.conf");
 
             XmlNode widthNode = configDoc.DocumentElement.SelectSingleNode("Width");
             XmlNode heightNode = configDoc.DocumentElement.SelectSingleNode("Height");

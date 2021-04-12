@@ -14,9 +14,9 @@ namespace GameFramework
         static TraceWorker()
         {
 
-            ts.Switch = new SourceSwitch("Alex","All");
-
-            TraceListener fileLog = new TextWriterTraceListener(new StreamWriter("GameLog.txt"));
+            ts.Switch = new SourceSwitch("Name","All");
+            //TODO better path ??
+            TraceListener fileLog = new TextWriterTraceListener(new StreamWriter(@"..\..\..\..\GameLog.txt"));
             ts.Listeners.Add(fileLog);
 
 

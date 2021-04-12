@@ -13,5 +13,5 @@ namespace GameFramework
         public string Symbol { get; set; }
         public bool Block { get; set; }
         public bool Reusable { get; set; }
-        public void Use(IPlayer creature, List<IWorldObject> objList, Action<IWorldObject> testAction); }
+        public void Use(ref IPlayer creature, List<IWorldObject> objList, Action<IWorldObject> testAction); }
 }

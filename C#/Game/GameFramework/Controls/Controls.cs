@@ -8,14 +8,20 @@ namespace GameFramework
 
     public class Controls : IControls
     {
-        public InputKey ReadNextEvent(List<IKey> keys)
+        private List<IKey> _keys;
+
+        public Controls(List<IKey> keys)
+        {
+            _keys = keys;
+        }
+        public InputKey ReadNextEvent()
         {
             var ok = true;
             while (ok)
             {
                 ConsoleKeyInfo info = Console.ReadKey();
                 char c = info.KeyChar;
-                foreach (var key in keys)
+                foreach (var key in _keys)
                 {
                     if (key.CheckKey(c))
                     {

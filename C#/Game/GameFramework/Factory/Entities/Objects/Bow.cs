@@ -5,26 +5,21 @@ using GameFramework.Factory.Entities.Decorator;
 
 namespace GameFramework.Factory.Entities.Objects
 {
-    public class Bow : Weapon, IWeapons
+    public class Bow : Weapon
     {
         public Bow(Position position, bool loot, string name, string symbol, bool block, bool reusable) : base(position, loot, name, symbol, block, reusable)
         {
         }
 
-        public override IPlayer AscendPlayer(IPlayer player)
+        public override void AscendPlayer(ref IPlayer player)
         {
-            if (player is Ranger)
+            if (player is Mage)
             {
-                return new Archer(player.Position, player.Name, "X", player.AttackDamage, player.Defense, player.HP, player);
-
-            }
-            else
-            {
-                return player;
+                player = new Archmage(player);
             }
         }
 
-        public override void Use(IPlayer creature, List<IWorldObject> objList, Action<IWorldObject> testAction)
+        public override void Use(ref IPlayer creature, List<IWorldObject> objList, Action<IWorldObject> testAction)
         {
             if (creature is Ranger)
             {
@@ -42,8 +37,6 @@ namespace GameFramework.Factory.Entities.Objects
                     }
                 }
             }
-
-            //Console.WriteLine("You're not a Mage");
         }
     }
 }

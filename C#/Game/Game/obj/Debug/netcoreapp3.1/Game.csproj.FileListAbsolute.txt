@@ -14,3 +14,4 @@ C:\Users\alexa\Documents\GitHub\4 Semester\C#\Game\Game\obj\Debug\netcoreapp3.1\
 C:\Users\alexa\Documents\GitHub\4 Semester\C#\Game\Game\obj\Debug\netcoreapp3.1\Game.dll
 C:\Users\alexa\Documents\GitHub\4 Semester\C#\Game\Game\obj\Debug\netcoreapp3.1\Game.pdb
 C:\Users\alexa\Documents\GitHub\4 Semester\C#\Game\Game\obj\Debug\netcoreapp3.1\Game.genruntimeconfig.cache
+C:\Users\alexa\Documents\GitHub\4 Semester\C#\Game\Game\bin\Debug\netcoreapp3.1\Newtonsoft.Json.dll

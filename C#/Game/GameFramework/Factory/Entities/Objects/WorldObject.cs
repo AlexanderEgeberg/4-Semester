@@ -28,7 +28,7 @@ namespace GameFramework
             Reusable = reusable;
         }
 
-        public abstract void Use(IPlayer creature, List<IWorldObject> objList, Action<IWorldObject> testAction);
+        public abstract void Use(ref IPlayer creature, List<IWorldObject> objList, Action<IWorldObject> testAction);
     }
 
 }

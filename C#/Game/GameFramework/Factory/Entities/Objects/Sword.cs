@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using GameFramework.Decorator;
 using GameFramework.Factory.Entities.Creatures;
+using GameFramework.Factory.Entities.Decorator;
 
 namespace GameFramework.Factory.Entities.Objects
 {
@@ -11,20 +12,28 @@ namespace GameFramework.Factory.Entities.Objects
         {
         }
 
-        public override IPlayer AscendPlayer(IPlayer player)
+        public override void AscendPlayer(ref IPlayer player)
         {
-            if (player is Fighter)
+            if (player is Mage)
             {
-                return new Warrior(player.Position, player.Name, "X", player.AttackDamage, 3,  player.HP+5, player);
-
-            }
-            else
-            {
-                return player;
+                player = new Archmage(player);
             }
         }
 
-        public override void Use(IPlayer creature, List<IWorldObject> objList, Action<IWorldObject> testAction)
+        //public override IPlayer Use(IPlayer player)
+        //{
+        //    if (player is Fighter)
+        //    {
+        //        return new Warrior(player);
+
+        //    }
+        //    else
+        //    {
+        //        return player;
+        //    }
+        //}
+
+        public override void Use(ref IPlayer creature, List<IWorldObject> objList, Action<IWorldObject> testAction)
         {
             if (creature is Fighter)
             {

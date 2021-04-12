@@ -5,28 +5,24 @@ using GameFramework.Factory.Entities.Decorator;
 
 namespace GameFramework.Factory.Entities.Objects
 {
-    public class Wand : Weapon, IWeapons
+    public class Wand : Weapon
     {
         public Wand(Position position, bool loot, string name, string symbol, bool block, bool reusable) : base(position, loot, name, symbol, block, reusable)
         {
         }
 
-        public override IPlayer AscendPlayer(IPlayer player)
+        public override void AscendPlayer(ref IPlayer player)
         {
             if (player is Mage)
             {
-                return new Archmage(player.Position, player.Name, "X", player.AttackDamage, 0, 5, player);
+                player = new Archmage(player);
+            }
 
-            }
-            else
-            {
-                return player;
-            }
         }
 
-        public override void Use(IPlayer creature, List<IWorldObject> objList, Action<IWorldObject> testAction)
+        public override void Use(ref IPlayer creature, List<IWorldObject> objList, Action<IWorldObject> testAction)
         {
-            if (creature is Mage)
+            if (creature is Archmage)
             {
                 if (Loot)
                 {
