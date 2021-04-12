@@ -6,4 +6,3 @@ C:\Users\alexa\Documents\GitHub\4 Semester\C#\Game\GameFramework\obj\Debug\netco
 C:\Users\alexa\Documents\GitHub\4 Semester\C#\Game\GameFramework\obj\Debug\netcoreapp3.1\GameFramework.csproj.CoreCompileInputs.cache
 C:\Users\alexa\Documents\GitHub\4 Semester\C#\Game\GameFramework\obj\Debug\netcoreapp3.1\GameFramework.dll
 C:\Users\alexa\Documents\GitHub\4 Semester\C#\Game\GameFramework\obj\Debug\netcoreapp3.1\GameFramework.pdb
-C:\Users\alexa\Documents\GitHub\4 Semester\C#\Game\GameFramework\obj\Debug\netcoreapp3.1\GameFramework.csprojAssemblyReference.cache

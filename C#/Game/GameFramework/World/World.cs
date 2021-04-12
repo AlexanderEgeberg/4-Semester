@@ -1,13 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Runtime.CompilerServices;
 using System.Text;
-using System.Xml.Serialization;
-using GameFramework.Enum;
-using GameFramework.Factory.Entities.Creatures;
+using GameFramework.Entities;
+using GameFramework.Entities.Creatures.Interface;
+using GameFramework.Entities.Objects.Interface;
 
-namespace GameFramework
+namespace GameFramework.World
 {
     public class World : IWorld
     {

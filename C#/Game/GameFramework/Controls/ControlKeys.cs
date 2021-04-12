@@ -1,7 +1,9 @@
-﻿using GameFramework;
+﻿using GameFramework.Enum;
 
-namespace GameFramework
+namespace GameFramework.Controls
 {
+
+    //Keys
     public class aKey : IKey
     {
         public bool CheckKey(char c)

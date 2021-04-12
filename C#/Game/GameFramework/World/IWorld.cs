@@ -1,9 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using GameFramework.Factory.Entities.Creatures;
+﻿using System.Text;
+using GameFramework.Entities.Creatures.Interface;
 
-namespace GameFramework
+namespace GameFramework.World
 {
     public interface IWorld
     {

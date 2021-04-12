@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace GameFramework
+﻿namespace GameFramework.Enum
 {
     public enum InputKey
     {

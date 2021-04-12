@@ -1,19 +1,18 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Linq.Expressions;
-using System.Runtime.CompilerServices;
-using System.Threading.Channels;
 using GameFramework;
 using GameFramework.Config;
+using GameFramework.Controls;
 using GameFramework.Decorator;
+using GameFramework.Entities;
+using GameFramework.Entities.Creatures.Interface;
+using GameFramework.Entities.Objects.Interface;
 using GameFramework.Enum;
 using GameFramework.Factory;
-using GameFramework.Factory.Entities.Creatures;
-using GameFramework.Factory.Entities.Decorator;
-using GameFramework.Factory.Entities.Objects;
+using GameFramework.Observer;
+using GameFramework.World;
 
-namespace GameFramework
+namespace MyGame
 {
     class Program
     {
@@ -21,11 +20,14 @@ namespace GameFramework
         {
             //Create deathobserver
             DeathObserver deathObserver = new DeathObserver();
-            //parameters game size, read from XML file
-            List<int> configDataInt = conf.ReadConfiguration();
-            //list of creature entites in the game
+            //parameters game size, read from XML file - unused switched to array dimensions
+            List<int> configDataInt = XMLConfig.ReadConfiguration();
+            //list of monster entities
             List<IMonster> monsters = new List<IMonster>();
+            //list of objects in the world
             List<IWorldObject> objects = new List<IWorldObject>();
+            //your class choice
+            PlayerType playerType;
 
 
 
@@ -60,11 +62,11 @@ namespace GameFramework
             //test controls
             //while (true)
             //{
-            //    Console.WriteLine(rightControls.ReadNextEvent());
+            //    Console.WriteLine(rightControls.ReadNextKey());
             //}
 
 
-            //TODO could make more grids to have more worlds
+            //TODO could make more grids to have more worlds - too 
             //game world, size depending on grid dimensions
             string[,] grid =
             {
@@ -87,11 +89,49 @@ namespace GameFramework
 
            void StartGame()
            {
+               //get class choice
+               while (true)
+               {
+                   Console.WriteLine("Choose your Class, 1. Ranger 2. Mage. 3. Warrior");
+                   var choice = Console.ReadLine();
+                   if (choice == "1" ||choice != null && choice.ToLower() == "ranger")
+                   {
+                       playerType = PlayerType.Ranger;
+                       break;
+                   }
+                   if (choice == "2" || choice.ToLower() == "mage")
+                   {
+                       playerType = PlayerType.Mage;
+                       break;
+
+                   }
+                   if (choice == "3" || choice.ToLower() == "warrior")
+                   {
+                       playerType = PlayerType.Warrior;
+                       break;
+                   }
+
+                }
+                Console.Clear();
+                Console.WriteLine("Game information:");
+                Console.WriteLine("H is you");
+                Console.WriteLine("# is walls, some may be passable");
+                Console.WriteLine("K is a key, retrieve this and you win");
+                Console.WriteLine("D is a dragon be careful it's strong");
+                Console.WriteLine("A is food");
+                Console.WriteLine("Z is a zombie");
+                Console.WriteLine("B,S,W are weapons Bow,Sword,Wand respectively");
+                Console.WriteLine("Press enter when you'd like to start the game");
+                Console.ReadLine();
+                Console.Clear();
+
                 objects.Clear();
                 monsters.Clear();
                 int rows = grid.GetLength(0);
                 int cols = grid.GetLength(1);
 
+
+                //Create entities with positions
                 for (int y = 0; y < rows; y++)
                 {
                     for (int x = 0; x < cols; x++)
@@ -100,13 +140,13 @@ namespace GameFramework
                         switch (element)
                         {
                             case "H":
-                                //TODO add factory for player too
-                                player = new Mage(new Position(y, x), "Alex", element, 6, 1, 1);
+                                //TODO add more customizability from user
+                                player = PlayerFactory.GetPlayer(playerType,new Position(y,x),1,"Alex",element,5,1);
                                 break;
                             case "Z":
 
                                 //Create a zombie
-                                monsters.Add(CreatureFactory.GetCreature(CreatureType.Dragon, new Position(y, x), 10, "Zombie", element, 2, 0));
+                                monsters.Add(CreatureFactory.GetCreature(CreatureType.Dragon, new Position(y, x), 10, element, 50, 0));
                                 break;
                             case "Z1":
 
@@ -118,7 +158,7 @@ namespace GameFramework
                                     WorldObjectFactory.GetWorldObject(WorldObjectType.Food,zombie.Position,true,"Apple",false,1,false,"A")
                                 };
 
-                                zombie = new Loot(zombie, loot);
+                                zombie = new LootDecorated(zombie, loot);
                                 monsters.Add(zombie);
 
                                 break;
@@ -135,13 +175,13 @@ namespace GameFramework
                                 objects.Add(WorldObjectFactory.GetWorldObject(WorldObjectType.Food, new Position(y, x), true, "Apple", false, 15, false, element));
                                 break;
                             case "W":
-                                objects.Add(WorldObjectFactory.GetWorldObject(WorldObjectType.Wand, new Position(y, x), true, "Wand", false, 5, false, element));
+                                objects.Add(WorldObjectFactory.GetWorldObject(WorldObjectType.Wand, new Position(y, x), true, "Basic Wand", false, 10, false, element));
                                 break;
                             case "B":
-                                objects.Add(WorldObjectFactory.GetWorldObject(WorldObjectType.Bow, new Position(y, x), true, "Bow", false, 5, false, element));
+                                objects.Add(WorldObjectFactory.GetWorldObject(WorldObjectType.Bow, new Position(y, x), true, "Wooden Bow", false, 3, false, element));
                                 break;
                             case "S":
-                                objects.Add(WorldObjectFactory.GetWorldObject(WorldObjectType.Sword, new Position(y, x), true, "Sword", false, 5, false, element));
+                                objects.Add(WorldObjectFactory.GetWorldObject(WorldObjectType.Sword, new Position(y, x), true, "Wooden Sword", false, 5, false, element));
                                 break;
                             case "K":
                                 objects.Add(WorldObjectFactory.GetWorldObject(WorldObjectType.Key, new Position(y, x), true, "Key", false, 0, false, element));
@@ -149,8 +189,6 @@ namespace GameFramework
                         }
                     }
                 }
-                //Create the player
-                //IPlayer player = new Mage(new Position(0, 5),"Alex", "H",6,1,1);
 
                 //create the visual world with dimensions, creatures,player, and objects
                 World world = new World(grid.GetLength(0), grid.GetLength(1), monsters, player, objects);

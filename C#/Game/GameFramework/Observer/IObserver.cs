@@ -1,9 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using GameFramework.Factory.Entities.Creatures;
+﻿using GameFramework.Entities.Creatures.Interface;
 
-namespace GameFramework
+namespace GameFramework.Observer
 {
     public interface IObserver
     {

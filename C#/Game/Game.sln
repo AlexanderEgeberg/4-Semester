@@ -3,9 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.30907.101
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Game", "Game\Game.csproj", "{F2088327-D333-4A3C-86CA-D0E7D7A05B46}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MyGame", "Game\MyGame.csproj", "{F2088327-D333-4A3C-86CA-D0E7D7A05B46}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GameFramework", "GameFramework\GameFramework.csproj", "{D9B99206-1357-49C8-883E-3BE9D28AB0AC}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GameFramework", "GameFramework\GameFramework.csproj", "{D9B99206-1357-49C8-883E-3BE9D28AB0AC}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

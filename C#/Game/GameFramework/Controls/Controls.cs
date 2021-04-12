@@ -1,9 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Text;
-using System.Xml.Serialization;
+using GameFramework.Enum;
 
-namespace GameFramework
+namespace GameFramework.Controls
 {
 
     public class Controls : IControls
@@ -14,7 +13,9 @@ namespace GameFramework
         {
             _keys = keys;
         }
-        public InputKey ReadNextEvent()
+
+        //gets user key pressed in enum
+        public InputKey ReadNextKey()
         {
             var ok = true;
             while (ok)

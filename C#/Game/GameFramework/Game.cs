@@ -5,9 +5,13 @@ using System.Linq;
 using System.Text;
 using System.Threading;
 using System.Threading.Channels;
-using GameFramework.Factory.Entities.Creatures;
-using GameFramework.Factory.Entities.Decorator;
-using GameFramework.Factory.Entities.Objects;
+using GameFramework.Controls;
+using GameFramework.Entities.Creatures.Interface;
+using GameFramework.Entities.Objects.Interface;
+using GameFramework.Enum;
+using GameFramework.Observer;
+using GameFramework.Tracer;
+using GameFramework.World;
 
 namespace GameFramework
 {
@@ -16,6 +20,7 @@ namespace GameFramework
         private IWorld _game_world;
         private IControls _controls;
         private bool _gameRunning;
+        private int _waitTime;
 
         private IPlayer _player;
         private static Random rnd = new Random();
@@ -57,7 +62,9 @@ namespace GameFramework
                 //If there is a player append player info
                 if (_player != null)
                 {
-                    gameGraphics.Append($"\n{_player.Name}  HP: {_player.HP} ma ");
+                    gameGraphics.Append(_player.EquippedWeapon != null
+                        ? $"\n{_player.Name}  HP: {_player.HP} max Damage: {_player.Hit()} Equipped: {_player.EquippedWeapon.Name}"
+                        : $"\n{_player.Name}  HP: {_player.HP} max Damage: {_player.Hit()} Equipped: None");
                     gameGraphics.AppendLine();
                 }
 
@@ -73,17 +80,20 @@ namespace GameFramework
                 if (gameConsole.Length > 0)
                 {
                     gameConsole.Clear();
-                    Console.WriteLine("Press enter to continue...");
-                    Console.ReadLine();
+                    //Console.WriteLine("Press enter to continue...");
+                    //Console.ReadLine();
+                    Thread.Sleep(500 * _waitTime);
+                    _waitTime = 0;
                     Console.Clear();
                     Console.WriteLine(gameGraphics);
                 }
                 Console.SetCursorPosition(0,0);
-                _gameRunning = GameAction(_controls.ReadNextEvent());
+                _gameRunning = GameAction(_controls.ReadNextKey());
 
                 //Console.WriteLine($"{_player.Position.Col} && {_player.Position.Row}");
                 //Console.WriteLine(_player);
 
+                //if the player died end the game
                 if (!_player.IsAlive())
                 {
                     break;
@@ -93,8 +103,7 @@ namespace GameFramework
             Console.CursorVisible = true;
             Console.Clear();
             Console.WriteLine(gameGraphics);
-            Console.WriteLine(_player.HasKey ? "\nYou obtained the key and won!" : "\nYou didn't obtain the key and lost :(");
-            Console.WriteLine("Game has ended");
+            Console.WriteLine(_player.HasKey ? "\nYou obtained the key and won!" : "\nYou died and didn't obtain the key so you lost :(");
             TraceWorker.Write(TraceEventType.Stop,3, "Game has ended");
         }
         private bool GameAction(InputKey move)
@@ -106,19 +115,23 @@ namespace GameFramework
             var creature = _creatures.Find(x => x.Position.Equals(_player.Position));
             //checks if player collides with a non passable World object or World walls
             CheckCollision(obj, move);
-            //Return true if the player is on top of any object.
+            //Check if the player is on a WorldObject
             CheckOnItem(obj, move);
-
+            //Check if player is on a creature
             CheckOnCreature(creature);
+            //Check if player won the game
             return CheckWin();
         }
 
+
+        //Generate random position property
         private void GetRandomPosition(IWorldObject objWorldObject)
         {
             objWorldObject.Position.Row = rnd.Next(_game_world.MaxWidth);
             objWorldObject.Position.Col = rnd.Next(_game_world.MaxHeight);
         }
 
+        //Collision
         private void CheckCollision(IWorldObject obj, InputKey move)
         {
             if (obj != null && obj.Block || _player.Position.Col == -1 || _player.Position.Col == _game_world.MaxHeight || _player.Position.Row == -1 || _player.Position.Row == _game_world.MaxWidth)
@@ -145,27 +158,40 @@ namespace GameFramework
 
         private void CheckOnItem(IWorldObject obj, InputKey move)
         {
+
+            //Checks if player is on an object
             if (obj != null && obj.Position.Equals(_player.Position))
             {
+                //add to consoleLog
+                gameConsole.AppendLine($"{_player.Name} walked on {obj.Name}");
+                _waitTime++;
 
+                //if the player does "USE"
                 if (move == InputKey.USE)
                 {
                     //not fan of using if obj is type to check if obj is weapon to use AscendPlayer
                     //Because what if I have objects that aren't weapons or regular worldObjects 
                     //I'd have to do add an extra if check each time.
                     //Ideally it should always do obj.use and act differently depending on type.
-                    if (obj is IWeapon weapon)
-                    {
+                    //if (obj is IWeapon weapon)
+                    //{
 
                         //Decorate player - look into undo a decorating.
                         //If player already is decorated then remove decorating? And apply new decorating TBD
 
                         //Have to use a new function besides .Use since I can't return the new IPlayer using obj.Use()
-                        weapon.AscendPlayer(ref _player);
-                        _game_world.Player = _player;
-                    }
+                        //weapon.AscendPlayer(ref _player);
+                        //_game_world.Player = _player;
+                    //}
+                    //Fixed
 
+                    //use the object /Decorate object / Eat food
                     obj.Use(ref _player, _objects, GetRandomPosition);
+                    gameConsole.AppendLine($"{_player.Name} used {obj.Name}");
+
+                    //consoleLog waittime based on log size
+                    _waitTime++;
+
                 }
 
             }
@@ -206,8 +232,10 @@ namespace GameFramework
                     var damage = player.Hit(enemy);
                     enemy.ReceiveHit(damage);
                     gameConsole.AppendLine($"{player.Name} attacks {enemy.Name} dealing {damage}");
+                    _waitTime++;
 
-                    gameConsole.AppendLine($"{enemy.Name} has {enemy.HP} left");
+                    gameConsole.AppendLine($"{enemy.Name} has {enemy.HP} HP left");
+                    _waitTime++;
                 }
 
                 if (enemy.IsAlive())
@@ -215,7 +243,9 @@ namespace GameFramework
                     var damage = enemy.Hit(player);
                     player.ReceiveHit(damage);
                     gameConsole.AppendLine($"{enemy.Name} attacks {player.Name} dealing {damage}");
-                    gameConsole.AppendLine($"{player.Name} has {player.HP} left");
+                    _waitTime++;
+                    gameConsole.AppendLine($"{player.Name} has {player.HP} HP left");
+                    _waitTime++;
                 }
             } while (player.IsAlive() && enemy.IsAlive());
 

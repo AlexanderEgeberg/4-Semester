@@ -71,9 +71,9 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\alexa\\Documents\\GitHub\\4 Semester\\C#\\Game\\Game\\Game.csproj",
-      "projectName": "Game",
-      "projectPath": "C:\\Users\\alexa\\Documents\\GitHub\\4 Semester\\C#\\Game\\Game\\Game.csproj",
+      "projectUniqueName": "C:\\Users\\alexa\\Documents\\GitHub\\4 Semester\\C#\\Game\\Game\\MyGame.csproj",
+      "projectName": "MyGame",
+      "projectPath": "C:\\Users\\alexa\\Documents\\GitHub\\4 Semester\\C#\\Game\\Game\\MyGame.csproj",
       "packagesPath": "C:\\Users\\alexa\\.nuget\\packages\\",
       "outputPath": "C:\\Users\\alexa\\Documents\\GitHub\\4 Semester\\C#\\Game\\Game\\obj\\",
       "projectStyle": "PackageReference",

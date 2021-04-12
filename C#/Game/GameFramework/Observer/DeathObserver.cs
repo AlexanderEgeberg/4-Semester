@@ -1,10 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Diagnostics;
-using System.Text;
-using GameFramework.Factory.Entities.Creatures;
+﻿using System.Diagnostics;
+using GameFramework.Entities.Creatures.Interface;
+using GameFramework.Tracer;
 
-namespace GameFramework
+namespace GameFramework.Observer
 {
     public class DeathObserver : IObserver
     {

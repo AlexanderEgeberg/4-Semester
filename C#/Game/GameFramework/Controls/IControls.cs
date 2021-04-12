@@ -1,9 +1,9 @@
-﻿using System.Collections.Generic;
+﻿using GameFramework.Enum;
 
-namespace GameFramework
+namespace GameFramework.Controls
 {
     public interface IControls
     {
-        public InputKey ReadNextEvent();
+        public InputKey ReadNextKey();
     }
 }

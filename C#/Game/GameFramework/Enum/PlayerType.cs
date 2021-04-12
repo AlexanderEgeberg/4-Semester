@@ -3,7 +3,7 @@
     public enum PlayerType
     {
         Mage,
-        Fighter,
+        Warrior,
         Ranger
     }
 }

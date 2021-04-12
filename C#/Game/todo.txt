@@ -1,15 +1,15 @@
 read from config DONE
 Check for SOLID world kunne være bedre
-Document code
-Refactor code
+Document code DONE
+Refactor code Done
 
 
 Enemies drop items DONE
 
-Decorater with weapon instead
-Ascend => Equip
+Decorater with weapon instead DONE
+Ascend => Equip DONE
 
-Hit damage based on weapon damage
+Hit damage based on weapon damage DONE
 
 
-Check namespaces
+Check namespaces DONE

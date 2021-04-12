@@ -1,4 +1,6 @@
-﻿namespace GameFramework
+﻿using GameFramework.Enum;
+
+namespace GameFramework.Controls
 {
     public interface IKey
     {
