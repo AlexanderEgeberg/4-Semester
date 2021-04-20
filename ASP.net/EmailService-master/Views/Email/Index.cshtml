@@ -1,0 +1,41 @@
+﻿@model Email 
+
+<div>
+    <form asp-action="Index">
+        <table>
+            <tr>
+                <td>To</td>
+                <td>
+                    <input type="text" asp-for="@Model.To" placeholder="Enter Email here ...." />
+                </td>
+                <td>
+                    <span asp-validation-for="@Model.To" class="alert-danger"></span>
+                </td>
+            </tr>
+            <tr>
+                <td>Subject</td>
+                <td>
+                    <input type="text" asp-for="@Model.Subject" placeholder="Enter subject here ...." />
+                </td>
+                <td>
+                    <span asp-validation-for="@Model.Subject" class="alert-danger"></span>
+                </td>
+            </tr>
+            <tr>
+                <td>Body</td>
+                <td>
+                    <textarea asp-for="@Model.Body" cols="23" rows="5" placeholder="Enter Body here....."></textarea>
+                </td>
+                <td>
+                    <span asp-validation-for="@Model.Body" class="alert-danger"></span>
+                </td>
+            </tr>
+            <tr>
+                <td></td>
+                <td><input type="submit" class="btn btn-success" value="Send Email"/></td>
+                <td>@ViewData["Message"]</td>
+            </tr>
+        </table>
+
+    </form>
+</div>

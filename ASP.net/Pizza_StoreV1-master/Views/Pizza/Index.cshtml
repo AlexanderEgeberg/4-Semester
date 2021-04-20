@@ -1,0 +1,41 @@
+﻿@model Dictionary<int, Pizza>
+
+<form method="get" asp-action="Index" asp-controller="Pizza">
+    <p>Search:</p>
+    <input type="text" name="SearchCriteria"/>
+    <input type="submit" value="Filter"/>
+</form>
+<div>
+    <a asp-action="IndexCreate" class="btn btn-primary"> Create New Pizza </a>
+</div>
+<div>   
+    <table class="table table-bordered">
+        <thead>
+        <tr>
+            <td>ID</td>
+            <td>Name</td>
+            <td>Price</td>
+            <td>Description</td>
+            <td>Image</td>
+        </tr>
+        </thead>
+        <tbody>
+        @if(Model.Values.Count > 0)
+        {
+            @foreach (var pizza in Model.Values)
+            {
+                var imagePath = "/Images/" + @pizza.ImageName;
+                <tr>
+                    <td>@pizza.Id</td>
+                    <td>@pizza.Name</td>
+                    <td>@pizza.Price</td>
+                    <td>@pizza.Description</td>
+                    <td><img src="@imagePath"/></td>
+                    <td>
+                    </td>
+                </tr>
+            }
+        }
+        </tbody>
+    </table>  
+</div>
